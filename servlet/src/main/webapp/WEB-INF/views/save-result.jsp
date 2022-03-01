@@ -6,6 +6,7 @@
 <body>
 성공
 <ul>
+<!-- 프로퍼티 접근법 -->
     <li>id=${member.id}</li>
     <li>username=${member.username}</li>
     <li>age=${member.age}</li>
