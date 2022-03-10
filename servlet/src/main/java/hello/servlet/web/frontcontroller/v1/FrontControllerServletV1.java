@@ -32,7 +32,7 @@ public class FrontControllerServletV1 extends HttpServlet {
 
         String requestURI = req.getRequestURI();
         System.out.println("requestURI= " + requestURI);
-
+        // 1. 매핑정보
         ControllerV1 controller = controllerMap.get(requestURI);
         if (controller == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
