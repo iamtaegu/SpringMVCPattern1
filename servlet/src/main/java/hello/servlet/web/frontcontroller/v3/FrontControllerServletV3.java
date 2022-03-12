@@ -49,9 +49,9 @@ public class FrontControllerServletV3 extends HttpServlet {
         ModelView mv = controller.process(paramMap);
 
         String viewName = mv.getViewName(); //논리이름 new-form
-        MyView view = viewResolver(viewName);
+        MyView view = viewResolver(viewName); // 논리이름 > 물리이름
 
-        view.render(mv.getModel(), req, resp);
+        view.render(mv.getModel(), req, resp); // view forward
     }
 
     // view 논리이름 > 물리이름으로 변경 & MyView 생성
