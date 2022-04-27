@@ -122,6 +122,7 @@ public class BasicItemController {
         return "basic/editForm";
     }
 
+    // PRG 패턴 적용으로 새로 고침 이후에 GetMapping("/{itemId}/edit") 호출
     @PostMapping("/{itemId}/edit")
     public String edit(@PathVariable Long itemId, @ModelAttribute Item item) {
         itemRepository.update(itemId, item);
