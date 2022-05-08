@@ -23,7 +23,10 @@ public class ResponseJsonServlet extends HttpServlet {
         HelloData data = new HelloData();
         data.setUsername("오태건");
         data.setAge(31);
-
+        //SpringMVC Jackson 라이브러리 객체 <> json 변환 지원
+        // json > 객체
+        //HelloData helloData = objectMapper.readValue(messageBody, HelloData.class);
+        // 객체 > json(string)
         String result = objectMapper.writeValueAsString(data);
         System.out.println("[ResponseJsonServlet] result= " + result);
 

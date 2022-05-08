@@ -69,6 +69,8 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println("req.getRequestURI() = " + req.getRequestURI());
         System.out.println("req.getQueryString() = " + req.getQueryString());
 
+        System.out.println("req.getParameter() =" + req.getParameter("test"));
+
         System.out.println("req.isSecure() = " + req.isSecure());
 
         System.out.println("----- REQUEST-LINE - end -----");

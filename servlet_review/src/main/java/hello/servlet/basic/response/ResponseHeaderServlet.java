@@ -22,13 +22,13 @@ public class ResponseHeaderServlet extends HttpServlet {
         resp.setHeader("my-header", "hello");
 
         //[Header 편의 메서드]
-        content(resp);
+        content(resp); // ContentType: application/json
         cookie(resp);
-        redirect(resp);
+        redirect(resp); // HTML > ContentType: text/html
 
         //[message body]
         PrintWriter writer = resp.getWriter();
-        writer.println("ok");
+        writer.println("ok"); // 단순 텍스트
     }
 
     private void redirect(HttpServletResponse resp) throws IOException {

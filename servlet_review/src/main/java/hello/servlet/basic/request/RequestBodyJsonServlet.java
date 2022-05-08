@@ -23,7 +23,7 @@ public class RequestBodyJsonServlet extends HttpServlet {
         ServletInputStream inputStream = req.getInputStream();
         String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
         System.out.println("messageBody = " + messageBody);
-
+        //SpringMVC Jackson 라이브러리(ObjectMapper) JSON <> 객체 변환 지원
         HelloData helloData = objectMapper.readValue(messageBody, HelloData.class);
         System.out.println("helloData = " + helloData);
         System.out.println("helloData.getUsername = " + helloData.getUsername());
