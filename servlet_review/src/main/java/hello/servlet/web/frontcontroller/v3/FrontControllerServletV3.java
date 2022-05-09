@@ -39,6 +39,8 @@ public class FrontControllerServletV3 extends HttpServlet {
         }
 
         Map<String, String> paramMap = createParamMap(req);
+        // F/C_v2에 req,resp > F/C_v3 paramMap
+        // Req param을 받듯이 Resp param을 줘야하기 때문에 ModelView로 전달함
         ModelView mv = controller.process(paramMap);
 
         String viewName = mv.getViewName();

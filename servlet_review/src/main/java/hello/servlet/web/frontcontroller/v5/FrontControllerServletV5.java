@@ -62,9 +62,13 @@ public class FrontControllerServletV5 extends HttpServlet {
         }
 
         MyHandlerAdapter adapter = getHandlerAdapter(handler);
+        // 각 adapter를 호출해 MV를 반환받음
+        // process에서 MV를 반환하지 않으면 adapter에서 생성
+        // 각 F/C_v*에 장점을 살리면서 사용할 수 있음
         ModelView mv = adapter.handle(req, resp, handler);
 
         MyView view = viewResolver(mv.getViewName());
+        // F/C에서 MyView를 호출해 forward 해줌
         view.render(mv.getModel(), req, resp);
     }
 

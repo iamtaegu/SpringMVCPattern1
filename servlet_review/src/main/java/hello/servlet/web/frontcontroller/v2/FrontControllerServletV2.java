@@ -36,7 +36,8 @@ public class FrontControllerServletV2 extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-
+        // servlet req, resp를 각 controller에게 할당 함으로써 메모리가 낭비되고
+        // view path에 불필요한 중복이 있음
         MyView view = controller.process(req, resp);
         view.render(req, resp);
     }

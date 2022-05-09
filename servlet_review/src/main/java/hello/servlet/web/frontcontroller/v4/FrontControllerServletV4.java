@@ -46,8 +46,9 @@ public class FrontControllerServletV4 extends HttpServlet {
         }
         // paramMap
         Map<String, String> paramMap =  createParamMap(req);
+        // F/C_v3에 ModelView 반환(각 Controller에서 MV 객체를 생성해줘야 했음)을
+        // model을 param에 추가함으로써 각 Controller에서 불필요한 MV객체 생성 제거
         Map<String, Object> model = new HashMap<>(); // process에 줄 model 추가
-
         String viewName = controller.process(paramMap, model);
         MyView view = viewResolver(viewName);
 
