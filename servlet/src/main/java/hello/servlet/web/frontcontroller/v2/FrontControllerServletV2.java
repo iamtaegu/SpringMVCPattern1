@@ -45,6 +45,7 @@ public class FrontControllerServletV2 extends HttpServlet {
         }
         // View 분리
         // process의 결과가 MyView 객체를 반환
+        // version_1, process(req, resp);
         MyView myView = controller.process(req, resp);
         myView.render(req, resp);
     }
