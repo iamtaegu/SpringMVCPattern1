@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 
 //@Getter
-@Data
+@Data // Getter, Setter외 기능도 포함하기 때문에 사용 지양
 public class Item {
 
     private Long id;

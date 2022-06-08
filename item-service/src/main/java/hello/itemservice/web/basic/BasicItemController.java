@@ -38,6 +38,9 @@ public class BasicItemController {
         return "basic/addForm";
     }
 
+    /*
+     * version1 - 4
+     */
     //@PostMapping("/add")
     public String addItemV1(@RequestParam String itemName
             , @RequestParam int price, @RequestParam Integer quantity
@@ -64,7 +67,7 @@ public class BasicItemController {
         item.setQuantity(quantity);
         item.setPrice(price);*/
 
-        itemRepository.save(item);
+        itemRepository.save(item); // item add
         
         // @ModelAttribute의 파라미터 item으로 처리
         //model.addAttribute("item", item);
