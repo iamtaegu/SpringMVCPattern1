@@ -33,12 +33,16 @@ public class FrontControllerServletV1 extends HttpServlet {
         String requestURI = req.getRequestURI();
         System.out.println("requestURI= " + requestURI);
         // 1. 매핑정보
+        // URI에 해당하는 Controller를 찾음
+        // Controller I/F를 통해 실행 객체를 가져옴
         ControllerV1 controller = controllerMap.get(requestURI);
         if (controller == null) {
+            // 4**, Client Error
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-
+        // version_1은 req,resp 서블릿을 그대로 주기 때문에
+        // Controller 실행 후 F/C 역할은 끝남
         controller.process(req, resp);
     }
 

@@ -20,6 +20,9 @@ public class SpringMemberSaveControllerV1 {
 
     @RequestMapping("/springmvc/v1/members/save") // URL 매핑
     public ModelAndView process(HttpServletRequest request, HttpServletResponse response) {
+
+        System.out.println("[SpringMemberSaveControllerV1] request.uri= " + request.getRequestURI());
+
         String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
 

@@ -18,6 +18,8 @@ public class SpringMemberControllerV3 {
     private final MemberRepository memberRepository = MemberRepository.getInstance();
 
     //@RequestMapping(value = "/new-form", method = RequestMethod.GET) // URL 매핑 & GET인 경우에만 호출
+    //가장 실용적인 방식 F/C_v4
+    // MAV 생성 > view 논리명 반환
     @GetMapping("/new-form")
     public String newForm() {
         return "new-form";

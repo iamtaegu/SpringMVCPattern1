@@ -11,6 +11,7 @@ public interface ControllerV2 {
     /**
      * V1은 Controller가 view forward까지 처리
      * V2은 view forward을 frontController에서 처리
+     * Return Type, void > MyView로 변경
      */
     MyView process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }
